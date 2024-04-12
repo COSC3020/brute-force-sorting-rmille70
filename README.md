@@ -17,7 +17,10 @@ sorted, i.e. do not copy the list and sort the copy.
 What is the runtime complexity of the algorithm that you implemented? What does
 a best case input for your implementation look like, what does a worst case
 input look like? How would this complexity change if you generated permutations
-randomly without memory instead of systematically trying them?
+randomly without memory instead of systematically trying them? 
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+
+The best case for my implementation is $\theta(n!)$, my best case input is a accending ordered list with a time compexity of $O(n)$, since we only need to iterate the list once to ensure its sorted. The worst case input is a decending ordered list with a complexity of $O(n * n!)$ since we would have to iterate n! times, and in each iteration the linear function checkSorted() would iterate. If the function was not systematic and created its permutations randomly, assumming the implementation stores each permutation and compares each new permutation to it, that would be $\theta(n^3 * n!)$ since you would have to create a new random permutation (n assuming Fisher-Yates Shuffle), linearly compare that permutation to all those already created(n * n!), and then linearly check each one to see if its sorted (n). 
